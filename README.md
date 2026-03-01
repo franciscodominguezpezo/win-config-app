@@ -1,5 +1,106 @@
 # 🪟 Win Config App
 
+Aplicación de escritorio construida con **Electron + Node.js** que permite aplicar configuraciones del sistema en Windows mediante PowerShell.
+
+---
+
+## 📌 Descripción
+
+Win Config App es una herramienta de escritorio para Windows diseñada para simplificar tareas de configuración del sistema como:
+
+- Activar/desactivar modo oscuro
+- Gestionar configuraciones de Windows mediante PowerShell
+- Aplicar ajustes del sistema de forma programática
+- Servir como base arquitectónica para herramientas avanzadas de configuración
+
+Este proyecto está pensado como una base escalable para construir un gestor de configuraciones de Windows más completo.
+
+---
+
+## 🏗️ Estructura del Proyecto
+
+```
+win-config-app/
+│
+├── main.js              # Proceso principal de Electron
+├── preload.js           # Puente seguro IPC
+├── package.json
+│
+├── renderer/            # Capa frontend
+│   ├── index.html
+│   ├── renderer.js
+│   └── styles.css
+│
+└── services/            # Lógica backend
+    └── systemService.js
+```
+
+---
+
+## ⚙️ Instalación
+
+```bash
+git clone https://github.com/franciscodominguezpezo/win-config-app.git
+cd win-config-app
+npm install
+```
+
+---
+
+## 🚀 Ejecutar la aplicación
+
+```bash
+npm start
+```
+
+---
+
+## 🧠 Cómo funciona
+
+- El **renderer process** gestiona la interfaz de usuario.
+- El **main process** escucha eventos IPC.
+- El backend ejecuta comandos PowerShell usando `node-powershell`.
+- La comunicación segura se realiza mediante `preload.js` utilizando `contextBridge`.
+
+---
+
+## 📦 Dependencias
+
+- Electron
+- node-powershell
+
+---
+
+## 🔐 Consideraciones de Seguridad
+
+- `contextIsolation` habilitado
+- `nodeIntegration` deshabilitado
+- Comunicación IPC controlada
+- Ejecución de PowerShell encapsulada en la capa de servicios
+
+---
+
+## 🎯 Roadmap
+
+- Detección de privilegios de administrador
+- Módulo de configuración de red
+- Módulo de gestión de energía
+- Módulo de gestión de usuarios
+- Exportar/importar perfiles de configuración
+- Generar instalador con electron-builder
+- Sistema de logs
+- Soporte para rollback de configuraciones
+
+---
+
+## 📄 Licencia
+
+ISC License
+
+---
+
+# 🪟 Win Config App (English Version)
+
 Desktop application built with **Electron + Node.js** that allows users to apply Windows system configurations using PowerShell.
 
 ---
@@ -96,51 +197,3 @@ npm start
 ## 📄 License
 
 ISC License
-
----
-
-# 🪟 Win Config App (English Version)
-
-## 📌 Description
-
-Win Config App is a desktop application built with **Electron and Node.js** that allows users to manage Windows configurations through PowerShell scripts.
-
-It is designed as a foundation for creating advanced Windows configuration tools.
-
----
-
-## 🏗️ Architecture Overview
-
-- Electron main process
-- Secure preload bridge
-- Renderer (UI layer)
-- Modular service-based backend
-- PowerShell execution through Node.js
-
----
-
-## ⚙️ Setup
-
-```bash
-npm install
-npm start
-```
-
----
-
-## 🚀 Features Implemented
-
-- Dark mode toggle via registry modification
-- IPC-based secure communication
-- Modular service architecture
-
----
-
-## 🔮 Future Improvements
-
-- Administrator execution level
-- System dashboard
-- Network configuration management
-- Installer generation (.exe)
-- Logging system
-- Configuration rollback support
