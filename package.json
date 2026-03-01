@@ -1,0 +1,33 @@
+{
+  "name": "win-config-app",
+  "version": "1.0.0",
+  "description": "Windows configuration desktop app built with Electron and Node.js",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron .",
+    "build": "echo \"Build step not configured yet\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/franciscodominguezpezo/win-config-app.git"
+  },
+  "keywords": [
+    "electron",
+    "windows",
+    "configuration",
+    "powershell"
+  ],
+  "author": "Francisco Domínguez Pezo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/franciscodominguezpezo/win-config-app/issues"
+  },
+  "homepage": "https://github.com/franciscodominguezpezo/win-config-app#readme",
+  "devDependencies": {
+    "electron": "^40.6.1"
+  },
+  "dependencies": {
+    "node-powershell": "^5.0.1"
+  }
+}
